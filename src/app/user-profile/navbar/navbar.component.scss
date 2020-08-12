@@ -7,7 +7,7 @@
     }
   }
   &-brand {
-    width:35px;
+    width: 35px;
     img {
       width: 100%
     }
@@ -18,8 +18,11 @@
   .form-inline {
     position: relative;
     width: 22%;
-    ::placeholder{
-        color: hsla(0,0%,100%,.75);
+    @media (max-width: 992px) {
+      width: 100%;
+    }
+    ::placeholder {
+      color: hsla(0, 0%, 100%, .75);
     }
     .form-control {
       width: 100%;
@@ -42,8 +45,45 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    a{
-        padding: 0 0.5rem;
+    color: #fff;
+    @media (max-width: 992px) {
+      justify-content: flex-start;
+      margin: 10px 0;
+
+    }
+    a {
+      padding: 0 0.5rem;
+      color: #fff;
+    }
+    .dropdown-item {
+      color: $black !important;
+    }
+  }
+  .navbar-toggler {
+    flex-direction: column;
+    padding: 5px;
+    @media (max-width: 992px) {
+      display: flex;
+      border-color: #fff !important;
+    }
+    .navbar-toggler-icon {
+      height: 1px;
+      margin: 3px 0;
+      background: white;
+      &:last-child {
+        height: 0.5px;
+      }
+    }
+  }
+  .navbar-collapse {
+    @media (max-width: 992px) {
+      position: absolute;
+      top: 3.6rem;
+      left: -1px;
+      right: 0;
+      background: #24292e;
+      z-index: 999;
+      padding: 0px 20px;
     }
   }
 }
