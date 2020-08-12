@@ -16,6 +16,7 @@ export class ReposComponent implements OnInit {
   searchText: string;
   profileData:any;
   username;
+  isTyping = false;
   ngOnInit(): void {
     this.getUserRepos()
   }
@@ -34,10 +35,12 @@ export class ReposComponent implements OnInit {
   findRepo() {
     console.log(this.searchText);
     if (this.searchText != '') {
+      this.isTyping = true;
       this.repos = this.repos.filter(res => {
         return res.name.toLocaleLowerCase().match(this.searchText.toLocaleLowerCase())
       });
     } else if (this.searchText == "") {
+      this.isTyping = false;
       this.ngOnInit();
     }
   }

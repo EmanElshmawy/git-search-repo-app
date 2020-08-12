@@ -1,12 +1,11 @@
 <div class="search-wrapper">
   <div class="form-group">
-    <input type="text" class="form-control" placeholder="type" name="searchText"
-     [(ngModel)]="searchText"  (keyup)="findRepo()">
+    <input type="text" class="form-control" placeholder="type" name="searchText" [(ngModel)]="searchText" (keyup)="findRepo()">
   </div>
   <div class="btn-wrapper d-flex jusify-content-stretsh">
     <div class="dropdown">
-      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-        Dropdown button
+      <button type="button" class="btn btn-edit dropdown-toggle" data-toggle="dropdown">
+        type All
       </button>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="#">Link 1</a>
@@ -15,8 +14,8 @@
       </div>
     </div>
     <div class="dropdown">
-      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-        Dropdown button
+      <button type="button" class="btn btn-edit dropdown-toggle" data-toggle="dropdown">
+        Language All
       </button>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="#">Link 1</a>
@@ -27,7 +26,53 @@
   </div>
 </div>
 <div class="repos-wrapper">
-    <div *ngFor="let repo of repos; index as i;">
-      <a [href]="repo.clone_url"  target="_blank" >{{repo.name}}</a>
+  <div *ngIf="isTyping" class="isTyping">
+    <span>{{repos.length}} </span>Result for repositories matching type</div>
+  <div class="repo-item" *ngFor="let repo of repos; index as i;">
+    <div class="row">
+      <div class="col-9">
+        <a class="repo-name" [href]="repo.clone_url" target="_blank">{{repo.name}}</a>
+        <p class="desc">{{repo.description}}</p>
+        <ul class="repo-details-wrappeer">
+          <li>
+            <fa name="cog" animation="spin"></fa>
+            {{repo.language}}
+          </li>
+          <li>
+            <span></span>
+            {{repo.stargazers_count}}
+          </li>
+          <li>
+            <span></span>
+            Updated on {{repo.updated_at | date}}
+          </li>
+        </ul>
+      </div>
+      <div class="col-3">
+        <button class="btn btn-edit ml-auto">
+          <img src="../../../assets/img/heart.svg" alt="" width="15"> star</button>
+
+        <svg width="155" height="30">
+          <defs>
+            <linearGradient id="gradient-259020250" x1="0" x2="0" y1="1" y2="0">
+              <stop offset="10%" stop-color="#9be9a8"></stop>
+              <stop offset="33%" stop-color="#40c463"></stop>
+              <stop offset="66%" stop-color="#30a14e"></stop>
+              <stop offset="90%" stop-color="#216e39"></stop>
+            </linearGradient>
+            <mask id="sparkline-259020250" x="0" y="0" width="155" height="28">
+              <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,1 6,1 9,1 12,1 15,1 18,1 21,1 24,1 27,1 30,1 33,1 36,1 39,1 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,1 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,1 99,1 102,1 105,1 108,2 111,7 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,1 138,1 141,1 144,1 147,1 150,1 153,1 "
+                fill="transparent" stroke="#8cc665" stroke-width="2">
+              </polyline>
+            </mask>
+          </defs>
+
+          <g transform="translate(0, -9)">
+            <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-259020250); mask: url(#sparkline-259020250)"></rect>
+          </g>
+        </svg>
+      </div>
     </div>
+
+  </div>
 </div>

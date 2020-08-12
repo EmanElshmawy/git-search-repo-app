@@ -1,19 +1,95 @@
+@import "../../../_variables";
 .search-wrapper {
   display: flex;
   justify-content: space-between;
-  align-content: center;
+  align-content: baseline;
   padding: 10px 0;
-  @media (max-width:768px) {
-      flex-direction: column;
+  border-bottom: 1px solid $border-color;
+  margin-bottom: 10px;
+  @media (max-width: 768px) {
+    flex-direction: column;
   }
   .form-group {
-    width: 70%;
+    width: 100%;
     margin-right: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
   }
   .btn-wrapper {
-    .dropdown-toggle {
+    .btn {
+      color: #24292e;
+      background-color: #fafbfc;
+      border-color: rgba(27, 31, 35, .15);
+      box-shadow: 0 1px 0 rgba(27, 31, 35, .04), inset 0 1px 0 hsla(0, 0%, 100%, .25);
+      transition: background-color .2s cubic-bezier(.3, 0, .5, 1);
+      margin: 5px;
       word-break: break-all;
-      margin: 0 10px;
+      &:hover {
+        background-color: $border-color;
+      }
     }
+  }
+
+}
+.repo-name {
+  font-size: 20px;
+  font-weight: 600;
+}
+.desc {
+  margin-top: 10px;
+  color: $darkgrey;
+}
+.repo-details-wrappeer {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  font-size: 14px;
+
+  li{
+    margin-right: 10px;
+    &:first-child{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &::before{
+        content:"";
+        height: 10px;
+        width: 10px;
+        display: inline-block;
+        margin-right: 3px;
+        background-color: #2b7489;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.repos-wrapper {
+  .isTyping {
+    padding: 10px 0 20px;
+    border-bottom: 1px solid $border-color;
+    span {
+      font-weight: 400;
+    }
+  }
+  .repo-item {
+    padding: 25px 0;
+    display: block;
+    border-bottom: 1px solid $border-color;
+    &:last-child {
+      border: none;
+    }
+  }
+}
+.btn {
+  color: #24292e;
+  background-color: #fafbfc;
+  border-color: rgba(27, 31, 35, .15);
+  box-shadow: 0 1px 0 rgba(27, 31, 35, .04), inset 0 1px 0 hsla(0, 0%, 100%, .25);
+  transition: background-color .2s cubic-bezier(.3, 0, .5, 1);
+  margin: 5px 0;
+  &:hover{
+      background-color: $border-color;
   }
 }

@@ -6,8 +6,8 @@
 export const environment = {
     production: false,
     baseURl:'https://api.github.com/',
-    clientId : '',
-    clientSecret: '',
+    clientId : 'Iv1.665d794ddc7b846b',
+    clientSecret: '647090059a5a148a4ff78f2074f889a8f06ffac4',
     token:''
   };
   

@@ -1,17 +1,22 @@
+@import '../../_variables';
+
 .main-wrapper {
   padding: 30px 15px;
   .nav-tabs {
-    padding-bottom: 15px;
     margin-bottom: 10px;
     .nav-link {
       border: 0;
+      padding-bottom: 20px;
+      color: grey;
       &.hover {
         border: 0;
       }
       &.active,
       &.show {
         border: 0;
-        border-bottom: 2px solid green;
+        border-bottom: 2px solid $orange;
+        color: $black;
+        font-weight: 500;
       }
     }
   }

@@ -1,11 +1,49 @@
-.navbar{
-    &-brand{
-        width: 40px;
-        img{
-            width: 100%
-        }
+@import "../../../_variables";
+.navbar {
+  background-color: $black;
+  .nav-item {
+    a {
+      color: white;
     }
-    .user-img{
-        width: 30px;
+  }
+  &-brand {
+    width:35px;
+    img {
+      width: 100%
     }
+  }
+  .user-img {
+    width: 30px;
+  }
+  .form-inline {
+    position: relative;
+    width: 22%;
+    ::placeholder{
+        color: hsla(0,0%,100%,.75);
+    }
+    .form-control {
+      width: 100%;
+      background-color: hsla(0, 0%, 100%, .125);
+      border: 0;
+      height: 30px;
+    }
+    .btn-search {
+      //   border: 1px solid $border-color;
+      //   color: $border-color;
+      position: absolute;
+      right: 12px;
+      display: flex;
+      justify-content: center;
+      padding: 0 5px;
+      line-height: 1.5;
+    }
+  }
+  .dropdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{
+        padding: 0 0.5rem;
+    }
+  }
 }
