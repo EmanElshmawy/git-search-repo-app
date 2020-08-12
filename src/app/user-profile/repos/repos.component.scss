@@ -1,0 +1,19 @@
+.search-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 10px 0;
+  @media (max-width:768px) {
+      flex-direction: column;
+  }
+  .form-group {
+    width: 70%;
+    margin-right: 20px;
+  }
+  .btn-wrapper {
+    .dropdown-toggle {
+      word-break: break-all;
+      margin: 0 10px;
+    }
+  }
+}

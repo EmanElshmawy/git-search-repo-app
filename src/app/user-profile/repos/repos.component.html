@@ -1,0 +1,33 @@
+<div class="search-wrapper">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="type" name="searchText"
+     [(ngModel)]="searchText"  (keyup)="findRepo()">
+  </div>
+  <div class="btn-wrapper d-flex jusify-content-stretsh">
+    <div class="dropdown">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        Dropdown button
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Link 1</a>
+        <a class="dropdown-item" href="#">Link 2</a>
+        <a class="dropdown-item" href="#">Link 3</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        Dropdown button
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Link 1</a>
+        <a class="dropdown-item" href="#">Link 2</a>
+        <a class="dropdown-item" href="#">Link 3</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="repos-wrapper">
+    <div *ngFor="let repo of repos; index as i;">
+      <a [href]="repo.clone_url"  target="_blank" >{{repo.name}}</a>
+    </div>
+</div>
