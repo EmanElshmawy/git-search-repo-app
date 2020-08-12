@@ -13,6 +13,9 @@
     border-radius: 5px;
     overflow: hidden;
     margin-bottom: 20px;
+    @media(max-width: 992px) {
+      width: 200px;
+    }
     img {
       width: 100%;
     }
